@@ -13,7 +13,7 @@ class App extends Component {
 
     // Go to API and check testAPI route for a response
     callAPI() {
-        fetch("http://localhost:9000/testAPI")
+        fetch("http://localhost:3001/testAPI")
             .then(res => res.text())
             .then(res => this.setState({ apiResponse: res }))
             .catch(err => err);
@@ -21,7 +21,7 @@ class App extends Component {
 
     // Go to API and check testDB route for a response
     callDB() {
-        fetch("http://localhost:9000/testDB")
+        fetch("http://localhost:3001/testDB")
             .then(res => res.text())
             .then(res => this.setState({ dbResponse: res }))
             .catch(err => err);

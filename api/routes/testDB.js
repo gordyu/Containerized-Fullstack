@@ -11,9 +11,10 @@ router.get("/", function(req, res, next) {
 
 // Connecting to MongoDB
 mongoose.connect(
-    "mongodb://mongodb:27017/test",
+    "mongodb://mongo-database:27017/test",
     { useNewUrlParser: true }
-);
+).then(() => console.log('MONGOOSE CONNECTED')
+).catch(err => console.log('MONGOOSE FAILED TO CONNECT'));
 
 // If there is a connection error send an error message
 mongoose.connection.on("error", error => {
