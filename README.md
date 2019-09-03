@@ -1,7 +1,7 @@
 #Containerized-Fullstack
 
 ## Current issues:
-Despite being dependency, mongo image does not start listening until API and client images attempt to connect to mongo, fail, and crash.
+Network connection http://172.24.0.4:3000/ times out with no erros.  Unsure why it won't connect.
 
 ## Gordon explains how to make this broken POS run:
 0. In local testing, change testDB.js from `mongodb://mongodb:27017` to `mongodb://localhost:27017`.  Original author failed to use correct form, documented at https://mongoosejs.com/docs/connections.html.
@@ -17,8 +17,10 @@ Despite being dependency, mongo image does not start listening until API and cli
    2a. `sudo docker-compose build`
    2b. `sudo docker-compose up`  
 4. After modification of images or source, first declare `sudo docker system prune`
+5. Note all modifications to Dockerfile and .yml that the original author failed to implement.  Specifically, inclusion of bash script wrappers to resolve this issue: Despite being dependency, mongo image does not start listening until API and client images attempt to connect to mongo, fail, and crash.
+6. Verify no extra formatting at the top of the bash scripts.
 
-## Original (inadequate) documentation, author, and readme:
+## Original (terrible) documentation, author, and readme:
 Original documentation and author: https://medium.com/free-code-camp/create-a-fullstack-react-express-mongodb-app-using-docker-c3e3e21c4074
 
 ## About the apps
@@ -39,5 +41,3 @@ There are two apps. (1) The Client which serves the FrontEnd (using React), and 
 2. If you see a webpage saying `Welcome to React`, it means the FrontEnd is working.
 3. If the same webpage has the phrase `API is working properly`, it means the API is working.
 4. Enjoy!
-
-# Containerized-Fullstack
