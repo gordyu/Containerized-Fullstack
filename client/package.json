@@ -1,6 +1,7 @@
 {
   "name": "my_react_app",
   "version": "0.1.0",
+  "author": "Gordon Yu",
   "private": true,
   "dependencies": {
     "react": "^16.9.0",

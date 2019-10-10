@@ -1,6 +1,7 @@
 {
   "name": "api",
   "version": "0.0.0",
+  "author": "Gordon Yu",
   "private": true,
   "scripts": {
     "start": "node ./bin/www"
